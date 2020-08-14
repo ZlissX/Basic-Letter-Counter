@@ -7,6 +7,8 @@ while True:
     lmfaooo=0#the amount of letters
 
     for letterss in passs:
+        if letterss in ('!', "," ,"\'" ,";" ,"\"", ".", "-" ,"?"): #if the letters in the loop matches this it will deduct one from the totoal count
+            letinpass=letinpass-1
         try:
             if let==int(letterss):
                 letinpass=letinpass-1
@@ -32,6 +34,8 @@ while True:
     askint=((input('Type yes if you want to know the amount of integers and letters in the pass')).lower())#.lower() will convert all of them to lower case letters
     if askint == 'yes':
         for lett in passs:
+            if lett in ('!', "," ,"\'" ,";" ,"\"", ".", "-" ,"?"): #if the letters in the loop matches this it will deduct one from the totoal count
+                lmfaooo=lmfaooo-1
             try:
                 spare=int(lett)
                 if spare==int(lett):
