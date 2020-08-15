@@ -55,7 +55,7 @@ while True:
                 if spare==int(lett):
                     Total_Numbers+=1
             except:
-                notanumber+=1
+                print()
                 
             #Total_letters is the letter count
 
@@ -68,4 +68,5 @@ while True:
     programexit=((input('do you want to exit the program ? if yes type yes or press enter:')).lower())#.lower() will convert all of them to lower case letters
     if programexit=='yes':
         exit()#this  will exit out of the program
+
 
