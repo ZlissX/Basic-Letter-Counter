@@ -40,7 +40,7 @@ while True:
             count += 1
     print(count)
 
-    askint=((input('Type yes if you want to know the amount of integers and punctuation in the passage')).lower())#.lower() will convert all of them to lower case letters
+    askint=((input('Type yes if you want to know the amount of integers,punctuation marks and letters in the passage:')).lower())#.lower() will convert all of them to lower case letters
     
     if askint == 'yes':
         for lett in passs:
@@ -48,22 +48,25 @@ while True:
             #the line below will count the amount of punctuaion marks in the passage
             if lett in ('!', "," ,"\'" ,";" ,"\"", ".", "-" ,"?"):
                 punctuationmarks+=1
-            
+            if lett in ('!', "," ,"\'" ,";" ,"\"", ".", "-" ,"?", "/", "<", ">","(",")","`","~","$",'#',"@","#","%","^","*","-","_","+","=","|","&","=","[","]","{","}"): #if the letters in the loop matches this it will deduct one from the totoal count
+                Total_letters-=1
                 
             try:
                 spare=int(lett)
                 if spare==int(lett):
                     Total_Numbers+=1
             except:
-                print()
+                if lett != ' ':
+                    Total_letters=Total_letters+1
+                
                 
             #Total_letters is the letter count
 
     
                 
-
-        print('the amount of integers\n',Total_Numbers)
-        print('the amount of punctuation marks\n',punctuationmarks)
+        print('The amount of letters:\n',Total_letters)
+        print('The amount of integers:\n',Total_Numbers)
+        print('The amount of punctuation marks:\n',punctuationmarks)
 
     programexit=((input('do you want to exit the program ? if yes type yes or press enter:')).lower())#.lower() will convert all of them to lower case letters
     if programexit=='yes':
