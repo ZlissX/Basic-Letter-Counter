@@ -3,12 +3,18 @@ while True:
     letinpass=0#letinpass is the total number of letters
     let=0#to check if the letter is a number and deduct from the letter count
     amountofint=0
-    lmfaoo=0#the amount of integers
-    lmfaooo=0#the amount of letters
+    Total_Numbers=0#the amount of integers
+    Total_letters=0#the amount of letters
+    punctuationmarks=0#the amount of punctuation marks in the passage
+    notanumber=0
+    
 
     for letterss in passs:
-        if letterss in ('!', "," ,"\'" ,";" ,"\"", ".", "-" ,"?", "/", "<", ">"): #if the letters in the loop matches this it will deduct one from the totoal count
+        
+        if letterss in ('!', "," ,"\'" ,";" ,"\"", ".", "-" ,"?", "/", "<", ">","(",")","`","~","$",'#',"@","#","%","^","*","-","_","+","=","|","&","=","[","]","{","}"): #if the letters in the loop matches this it will deduct one from the totoal count
             letinpass=letinpass-1
+        
+
         try:
             if let==int(letterss):
                 letinpass=letinpass-1
@@ -19,34 +25,47 @@ while True:
                 if letterss != ' ':
                     letinpass = letinpass+1
 
-    print('the amount of letters in your passage:\n',letinpass)
+    print('The Total amount of Letters:\n',letinpass)
 
 
-    print(passs)
+    
 
-    Letter=(input('what letter do you want to find'))
+    Letter=(input('what letter do you want to find ?'))
+    print("you want to  find :" ,Letter)
     count=0
+    
+
     for letters in passs:
         if letters==Letter:
             count += 1
     print(count)
 
-    askint=((input('Type yes if you want to know the amount of integers and letters in the pass')).lower())#.lower() will convert all of them to lower case letters
+    askint=((input('Type yes if you want to know the amount of integers and punctuation in the passage')).lower())#.lower() will convert all of them to lower case letters
+    
     if askint == 'yes':
         for lett in passs:
-            if lett in ('!', "," ,"\'" ,";" ,"\"", ".", "-" ,"?"): #if the letters in the loop matches this it will deduct one from the totoal count
-                lmfaooo=lmfaooo-1
+            
+            #the line below will count the amount of punctuaion marks in the passage
+            if lett in ('!', "," ,"\'" ,";" ,"\"", ".", "-" ,"?"):
+                punctuationmarks+=1
+            
+                
             try:
                 spare=int(lett)
                 if spare==int(lett):
-                    lmfaoo+=1
+                    Total_Numbers+=1
             except:
-            #lmfaooo is the letter count
-                lmfaooo+=1
+                notanumber+=1
+                
+            #Total_letters is the letter count
 
-        print('the amount of integers\n',lmfaoo)
-        print('the amount of letters\n',lmfaooo)
+    
+                
+
+        print('the amount of integers\n',Total_Numbers)
+        print('the amount of punctuation marks\n',punctuationmarks)
 
     programexit=((input('do you want to exit the program ? if yes type yes or press enter:')).lower())#.lower() will convert all of them to lower case letters
     if programexit=='yes':
         exit()#this  will exit out of the program
+
