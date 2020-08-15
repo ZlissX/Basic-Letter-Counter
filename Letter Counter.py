@@ -7,7 +7,7 @@ while True:
     lmfaooo=0#the amount of letters
 
     for letterss in passs:
-        if letterss in ('!', "," ,"\'" ,";" ,"\"", ".", "-" ,"?"): #if the letters in the loop matches this it will deduct one from the totoal count
+        if letterss in ('!', "," ,"\'" ,";" ,"\"", ".", "-" ,"?", "/", "<", ">"): #if the letters in the loop matches this it will deduct one from the totoal count
             letinpass=letinpass-1
         try:
             if let==int(letterss):
