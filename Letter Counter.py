@@ -69,6 +69,9 @@ while True:
         print('The amount of punctuation marks:\n',punctuationmarks)
 
     programexit=((input('do you want to exit the program ? if yes type yes or press enter:')).lower())#.lower() will convert all of them to lower case letters
+    if programexit!='yes':
+        print('restarting')
+        continue
     if programexit=='yes':
         exit()#this  will exit out of the program
 
